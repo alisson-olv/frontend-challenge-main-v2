@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'custom-md-grey': '#5D5D6D',
+        'custom-md-gray': '#5D5D6D',
+        'custom-light-gray': '#f0f0f5',
         'texto-dark': '#737380',
         'off-white': '#f6f6f9',
       },

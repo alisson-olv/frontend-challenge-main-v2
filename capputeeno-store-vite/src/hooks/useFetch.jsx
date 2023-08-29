@@ -30,7 +30,7 @@ const useFetch = (url, query) => {
         setLoading(false);
       };
     };
-    
+
     getData();
 
   }, [])

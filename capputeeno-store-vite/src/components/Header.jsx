@@ -1,16 +1,12 @@
 import ShoppingBagIcon from '../icons/ShoppingBagIcon';
 import SearchLoupe from '../icons/SearchLoupe';
-import useFetch from '../hooks/useFetch';
 
 const Header = () => {
-  const { data } = useFetch();
-
-  console.log(data);
 
   return (
     <header className='my-5'>
       <div className='flex items-center justify-between flex-wrap'>
-        <div className='text-[40px] text-custom-md-grey'>
+        <div className='text-[40px] text-custom-md-gray'>
           <h1>
             capputeeno
           </h1>
