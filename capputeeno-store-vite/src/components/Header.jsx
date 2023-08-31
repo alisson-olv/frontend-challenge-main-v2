@@ -7,7 +7,7 @@ const Header = () => {
     <header className='my-5'>
       <div className='flex items-center justify-between flex-wrap'>
         <div className='text-[40px] text-custom-md-gray'>
-          <h1>
+          <h1 className='select-none'>
             capputeeno
           </h1>
         </div>

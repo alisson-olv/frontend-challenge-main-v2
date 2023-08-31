@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const useFetch = (url, query) => {
+const useFetch = (query) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +8,7 @@ const useFetch = (url, query) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(url, {
+        const response = await fetch('http://localhost:3333/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const useFetch = (url, query) => {
 
     getData();
 
-  }, [])
+  }, [query])
 
   return { data, error, loading };
 }
