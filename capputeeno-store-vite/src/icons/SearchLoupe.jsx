@@ -7,6 +7,6 @@ const SearchLoupe = () => {
       <path d="M20.0034 20.0033L16.0518 16.0517" stroke="#737380" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
-}
+};
 
 export default SearchLoupe;

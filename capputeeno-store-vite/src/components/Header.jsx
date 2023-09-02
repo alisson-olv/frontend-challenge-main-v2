@@ -1,16 +1,16 @@
 import ShoppingBagIcon from '../icons/ShoppingBagIcon';
 import SearchLoupe from '../icons/SearchLoupe';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
-
   return (
     <header className='my-5'>
       <div className='flex items-center justify-between flex-wrap'>
-        <div className='text-[40px] text-custom-md-gray'>
-          <h1 className='select-none'>
-            capputeeno
-          </h1>
-        </div>
+        <h1
+          className='select-none text-[40px] text-custom-md-gray cursor-pointer'
+        >
+          <Link to='/'>capputeeno</Link>
+        </h1>
 
         <div className='flex items-center flex-wrap justify-between gap-4'>
           <div className='relative grid items-center'>
@@ -27,7 +27,7 @@ const Header = () => {
 
           <div className='relative cursor-pointer'>
             <ShoppingBagIcon />
-            <span className='text-center absolute left-3 top-4 bg-red-600 rounded-full w-6 text-white text-[10px] p-1'>
+            <span className='select-none text-center absolute left-3 top-4 bg-red-600 rounded-full w-6 text-white text-[10px] p-1'>
               2
             </span>
           </div>
@@ -35,6 +35,6 @@ const Header = () => {
       </div>
     </header>
   )
-}
+};
 
 export default Header;

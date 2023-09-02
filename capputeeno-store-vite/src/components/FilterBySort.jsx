@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { ProductContext } from '../contexts/ProductsContext';
+import { ListProductContext } from '../contexts/ListProductsContext';
 import ArrowIcon from '../icons/ArrowIcon';
 
 const FilterBySort = () => {
-  const { setTypeOfSort } = useContext(ProductContext);
+  const { setTypeOfSort } = useContext(ListProductContext);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleIsOpenOverlay = () => {
@@ -11,26 +11,26 @@ const FilterBySort = () => {
   };
 
   const handleTypeOfSort = (query) => {
-    setTypeOfSort(query)
+    setTypeOfSort(query);
     setIsOpen(false);
   };
 
   const sortList = [
     {
       name: 'Novidades',
-      queryFilter: ''
+      queryFilter: 'sortField: "created_at", sortOrder: "DESC"'
     },
     {
       name: 'Preço: Maior - menor',
-      queryFilter: '(filter: {category: "t-shirts"})'
+      queryFilter: 'sortField: "price_in_cents", sortOrder: "DESC"'
     },
     {
       name: 'Preço: Menor - maior',
-      queryFilter: '(filter: {category: "mugs"})'
+      queryFilter: 'sortField: "price_in_cents", sortOrder: "ASC"'
     },
     {
       name: 'Mais vendidos',
-      queryFilter: '(filter: {category: "mugs"})'
+      queryFilter: 'sortField: "sales", sortOrder: "DESC"'
     }
   ];
 
@@ -59,9 +59,8 @@ const FilterBySort = () => {
           </>
         }
       </div>
-
     </>
   )
-}
+};
 
 export default FilterBySort;

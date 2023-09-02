@@ -1,27 +1,25 @@
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from "react";
 
 export const ProductContext = createContext();
 
 const ProductsContext = ({ children }) => {
-  const [typeOfProduct, setTypeOfProduct] = useState('');
-  const [typeOfSort, setTypeOfSort] = useState('');
+  const [productId, setProductId] = useState('');
 
   const query = `query {
-    allProducts ${typeOfProduct}{
-      id,
+    allProducts (filter:{id: "${productId}"}) {
       name,
-      price_in_cents,
-      image_url,
+    	category,
       description,
-      category,
+      image_url,
+      price_in_cents
     }
   }`
 
   return (
-    <ProductContext.Provider value={{ typeOfProduct, setTypeOfProduct, query, typeOfSort, setTypeOfSort }}>
+    <ProductContext.Provider value={{ productId, setProductId, query }}>
       {children}
     </ProductContext.Provider>
   )
-}
+};
 
 export default ProductsContext;

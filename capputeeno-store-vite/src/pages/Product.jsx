@@ -1,8 +1,8 @@
-import React from 'react';
-import Header from '../components/Header';
-import CardsProducts from '../components/CardsProducts';
+import Header from '../components/Header'
+import ProductItem from '../components/ProductItem';
 
-const Home = () => {
+const Product = () => {
+
   return (
     <>
       <div className="mx-auto max-w-[1120px] px-3">
@@ -10,11 +10,11 @@ const Home = () => {
       </div>
       <div className='bg-custom-light-gray'>
         <div className="mx-auto max-w-[1120px] px-3">
-          <CardsProducts />
+          <ProductItem />
         </div>
       </div>
     </>
   )
 };
 
-export default Home;
+export default Product;

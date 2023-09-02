@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { ProductContext } from '../contexts/ProductsContext';
+import { ListProductContext } from '../contexts/ListProductsContext';
 
 const FilterByType = () => {
-  const { typeOfProduct, setTypeOfProduct } = useContext(ProductContext);
+  const { typeOfProduct, setTypeOfProduct } = useContext(ListProductContext);
 
   const handleTypeOfProduct = (item) => {
     setTypeOfProduct(item)
@@ -15,11 +15,11 @@ const FilterByType = () => {
     },
     {
       name: 'Camisetas',
-      queryFilter: '(filter: {category: "t-shirts"})'
+      queryFilter: 'filter: {category: "t-shirts"}'
     },
     {
       name: 'Canecas',
-      queryFilter: '(filter: {category: "mugs"})'
+      queryFilter: 'filter: {category: "mugs"}'
     }
   ];
 
@@ -31,7 +31,7 @@ const FilterByType = () => {
             <li
               key={index}
               onClick={() => handleTypeOfProduct(menu.queryFilter)}
-              className={`${typeOfProduct === menu.queryFilter ? 'font-bold text-slate-950 border-[#FFA585]' : 'border-transparent'} cursor-pointer text-lg text-custom-md-gray border-b-4 select-none`}
+              className={`${typeOfProduct === menu.queryFilter ? 'font-bold text-slate-950 border-[#FFA585] transition-all' : 'border-transparent'} transition-all hover:font-bold cursor-pointer text-lg text-custom-md-gray border-b-4 select-none`}
             >
               {menu.name}
             </li>
@@ -40,6 +40,6 @@ const FilterByType = () => {
       </ul>
     </div>
   )
-}
+};
 
 export default FilterByType;

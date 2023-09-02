@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useFetch = (query) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // adicionar loading e error no app
 
   useEffect(() => {
     const getData = async () => {
@@ -33,9 +35,9 @@ const useFetch = (query) => {
 
     getData();
 
-  }, [query])
+  }, [query]);
 
   return { data, error, loading };
-}
+};
 
 export default useFetch;

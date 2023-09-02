@@ -6,6 +6,6 @@ const ArrowIcon = ({ className }) => {
       <path d="M1 1L5 5L9 1" stroke="#737380" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
-}
+};
 
 export default ArrowIcon;
